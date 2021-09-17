@@ -28,3 +28,4 @@ add_library(${PROJECT_NAME} SHARED iglwrap.cpp)
 set_target_properties(${PROJECT_NAME} PROPERTIES PUBLIC_HEADER iglwrap.h)
 target_link_libraries(${PROJECT_NAME} PUBLIC
 	 igl::core igl::cgal ${Boost_LIBRARIES})
+install(TARGETS ${PROJECT_NAME} LIBRARY)
