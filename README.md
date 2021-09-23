@@ -1,2 +1,2 @@
-# iglwrap
-Trivial C wrapper for some parts of the IGL library
+# IGLWrap.jl
+Julia wrapper for (a small subset of) the IGL library
