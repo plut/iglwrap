@@ -26,7 +26,8 @@ install_license ${WORKSPACE}/srcdir/LICENSE
 """
 
 products = [
-	LibraryProduct("libiglwrap", :libiglwrap)
+	LibraryProduct("libiglwrap", :libiglwrap;
+		dlopen_flags=[:RTLD_NOW,:RTLD_LOCAL])
 ]
 
 platforms = [
@@ -38,7 +39,7 @@ platforms = expand_cxxstring_abis(platforms)
 
 
 dependencies = [
-  Dependency("boost_jll", v"1.71"),
+  Dependency("boost_jll", compat="~1.71"),
 	Dependency("GMP_jll"),
 	Dependency("MPFR_jll"),
 	Dependency("OpenBLAS_jll"),
