@@ -5,7 +5,7 @@ BINARYBUILDER_RUNNER=privileged julia build_tarballs.jl --verbose --debug
 using BinaryBuilder
 using Pkg
 
-version = v"0.1"
+version = v"0.0.1"
 
 sources = [
 	DirectorySource("./iglwrap"),
@@ -16,7 +16,8 @@ sources = [
 
 script = raw"""
 cd $WORKSPACE/srcdir
-mkdir build; cd build
+echo a
+mkdir build||true; cd build
 cmake \
   -DCMAKE_INSTALL_PREFIX=$prefix \
 	-DCMAKE_MODULE_PATH=${WORKSPACE}/srcdir/libigl/cmake\; \
